@@ -100,15 +100,21 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy(Request $user)
+    // public function destroy(Request $user)
+    //{
+        //$delete = $user->all();
+
+        //$deleteuser = User::findOrfail($user->user_id);
+        //$deleteuser->user();
+        //return redirect()->route('user.index')->with('success','User Deleted Successfully!');
+
+    public function destroy(Request $id)
     {
-        $delete = $user->all();
+        $deleteuser = User::where('id', $id)->delete();
 
-        $deleteuser = User::findOrfail($user->user_id);
-        $deleteuser->user();
-        return redirect()->route('user.index')->with('success','User Deleted Successfully!');
-
-        
+        return redirect()->route('user.index')->with('success','Product deleted Successfully!');
     }
+   
+    
 }
 
