@@ -419,6 +419,14 @@
 </div>
 <!-- ./wrapper -->
 
+<!--CHART ERROR SA HOME TRY LANG-->
+@if(Route::currentRouteName() == '/home')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    {!! $chart->script() !!}
+    {!! $linechart->script() !!}
+@endif
+<!--CHART ERROR SA HOME TRY LANG-->
+
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -453,5 +461,6 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
 </body>
 </html>
