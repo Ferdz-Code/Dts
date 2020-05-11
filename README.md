@@ -17,8 +17,6 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 
 We would like to extend our thanks to the following sponsors for funding this development.
 
-- **Marlon**
 - **Loren**
-- **Hero**
-
+- **Marlon**
 
