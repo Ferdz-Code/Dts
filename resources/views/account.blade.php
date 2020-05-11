@@ -12,7 +12,7 @@
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ route('home')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active">User</li>
+                <li class="breadcrumb-item active">User Account</li>
             </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -34,7 +34,7 @@
             <div class="card card-success card-outline">
                 
                 <div class="card-header ">
-                <h3 class="card-title ">User</h3>
+                <h3 class="card-title ">User Account</h3>
   
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">

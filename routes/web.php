@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Two parameters pag resource gamit kaya may * (asterisk)
 Route::Resource('document', 'DocumentController')->name('*', 'document');
+Route::Resource('user', 'UserController')->name('*', 'user');
 
 //Documents
 Route::get('/received','HomeController@received')->name('received');
@@ -39,7 +40,7 @@ Route::get('/myclosed','HomeController@myclosed')->name('myclosed');
 
 //
 Route::get('/report','HomeController@report')->name('report');
-Route::get('/user','HomeController@user')->name('user');
+Route::get('/account','HomeController@account')->name('account');
 Route::get('/role','HomeController@role')->name('role');
 
 //

@@ -34,7 +34,7 @@
                   <p>Received</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-ios-cloud-download-outline"></i>
+                  <i class="icon fas fa-download"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -49,7 +49,7 @@
                   <p>Outgoing</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-ios-cloud-upload-outline"></i>
+                  <i class="icon fas fa-upload"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -64,7 +64,7 @@
                   <p>Internal</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-android-refresh"></i>
+                  <i class="icon fas fa-sign-in-alt"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -79,7 +79,8 @@
                   <p>Closed</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-android-checkmark-circle"></i>
+                  <!--<i class="ion ion-android-checkmark-circle"></i>-->
+                  <i class="icon fas fa-check-circle"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>

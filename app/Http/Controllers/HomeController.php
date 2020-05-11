@@ -40,6 +40,7 @@ class HomeController extends Controller
 
     public function report() { return view('report'); }
     public function user() { return view('user'); }
+    public function account() { return view('account'); }
     public function role() { return view('role'); }
 
     public function faqs() { return view('faqs'); }
