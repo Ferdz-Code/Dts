@@ -6,7 +6,7 @@
 
 ## About My Design
 
-This is my First Design.
+A simple design using Laravel 6 and Adminlte3 Template
 
 ## Learning Laravel
 
