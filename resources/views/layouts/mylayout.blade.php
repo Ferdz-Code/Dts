@@ -316,7 +316,6 @@
             </ul>
           </li>
 
-
             <li class="nav-item has-treeview">
               <a href="{{route('settings')}}" class="nav-link">
                 <i class="nav-icon fas fa-cog"></i>
@@ -324,6 +323,54 @@
                   Setting
                 </p>
               </a>
+            </li>
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon far fa-question-circle"></i>
+                <p>
+                  Tab Layout
+                  <i class="fas fa-angle-left right"></i>
+                  <!--<span class="badge badge-info right">6</span>-->
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item has-treeview">
+                  <a href="{{route('tab_received')}}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                    <p>
+                      Documents
+                    </p>
+                  </a>
+      
+                </li>
+                <li class="nav-item has-treeview">
+                  <a href="tab_myreceived" class="nav-link">
+                    <i class="nav-icon far fa-envelope"></i>
+                    <p>
+                      Inbox
+                    </p>
+                  </a>
+                </li>         
+      
+                  <li class="nav-item has-treeview">
+                    <a href="{{route('tab_account')}}" class="nav-link">
+                      <i class="nav-icon far fa-user"></i>
+                      <p>
+                        Account
+                      </p>
+                    </a>
+                  </li>
+      
+                  <li class="nav-item has-treeview">
+                    <a href="{{route('tab_help')}}" class="nav-link">
+                      <i class="nav-icon far fa-question-circle"></i>
+                      <p>
+                        Help
+                      </p>
+                    </a>
+                  </li>
+              </ul>
             </li>
 
             <li class="nav-header">Action</li>
@@ -339,42 +386,8 @@
               </form>
             </li>
           
-            <li class="nav-header ">Tab Design</li>
-            <li class="nav-item has-treeview">
-              <a href="{{route('tab_received')}}" class="nav-link">
-                <i class="nav-icon far fa-folder"></i>
-                <p>
-                  Documents
-                </p>
-              </a>
-  
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="tab_myreceived" class="nav-link">
-                <i class="nav-icon far fa-envelope"></i>
-                <p>
-                  Inbox
-                </p>
-              </a>
-            </li>         
-  
-              <li class="nav-item has-treeview">
-                <a href="{{route('tab_account')}}" class="nav-link">
-                  <i class="nav-icon far fa-user"></i>
-                  <p>
-                    Account
-                  </p>
-                </a>
-              </li>
-  
-              <li class="nav-item has-treeview">
-                <a href="{{route('tab_help')}}" class="nav-link">
-                  <i class="nav-icon far fa-question-circle"></i>
-                  <p>
-                    Help
-                  </p>
-                </a>
-              </li>
+            
+            
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
