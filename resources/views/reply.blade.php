@@ -21,7 +21,7 @@
     <!-- /.content-header -->
 
     <section class="content">
-        <div class="container-fluid">
+        <div class="container-fluid ">
           <div class="row">
             <section class="col-lg-7 connectedSortable ui-sortable mt-3">
               <!-- Custom tabs (Charts with tabs)-->
@@ -114,7 +114,7 @@
             <section class="col-lg-5 connectedSortable ui-sortable">
   
               <!-- Map card -->
-              <div class="card mt-3">
+              <div class="card mt-3 ">
                 <div class="card-header">
                   <h3 class="card-title"><b>
                     <i class="fas fa-map-marker-alt mr-1"></i>

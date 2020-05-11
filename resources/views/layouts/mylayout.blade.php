@@ -154,7 +154,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-light-primary elevation-4"> <!--dark to light-->
+  <aside class="main-sidebar sidebar-light-primary elevation-2"> <!--dark to light-->
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/ARTA_LOGO.png" alt="ARTA Logo" class="brand-image img-circle elevation-2"

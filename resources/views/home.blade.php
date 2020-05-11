@@ -27,14 +27,14 @@
           <div class="row">
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-info">
+              <div class="small-box bg-gradient-info elevation-2">
                 <div class="inner">
                   <h3>150</h3>
   
-                  <p>New Orders</p>
+                  <p>Received</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-bag"></i>
+                  <i class="ion ion-ios-cloud-download-outline"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -42,14 +42,14 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-success">
+              <div class="small-box bg-gradient-success elevation-2">
                 <div class="inner">
                   <h3>53<sup style="font-size: 20px">%</sup></h3>
   
-                  <p>Bounce Rate</p>
+                  <p>Outgoing</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
+                  <i class="ion ion-ios-cloud-upload-outline"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -57,14 +57,14 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-warning">
+              <div class="small-box bg-gradient-warning elevation-2">
                 <div class="inner">
                   <h3>44</h3>
   
-                  <p>User Registrations</p>
+                  <p>Internal</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-person-add"></i>
+                  <i class="ion ion-android-refresh"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -72,14 +72,14 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-danger">
+              <div class="small-box bg-gradient-danger elevation-2">
                 <div class="inner">
                   <h3>65</h3>
   
-                  <p>Unique Visitors</p>
+                  <p>Closed</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                  <i class="ion ion-android-checkmark-circle"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -92,11 +92,11 @@
             <!-- Left col -->
             <section class="col-lg-7 connectedSortable">
               <!-- Custom tabs (Charts with tabs)-->
-              <div class="card">
+              <div class="card elevation-2">
                 <div class="card-header">
                   <h3 class="card-title">
                     <i class="fas fa-chart-pie mr-1"></i>
-                    Sales
+                    Documents
                   </h3>
                   <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
@@ -125,7 +125,7 @@
               <!-- /.card -->
   
               <!-- DIRECT CHAT -->
-              <div class="card direct-chat direct-chat-primary">
+              <div class="card direct-chat direct-chat-primary elevation-2">
                 <div class="card-header">
                   <h3 class="card-title">Direct Chat</h3>
   
@@ -327,7 +327,7 @@
               <!--/.direct-chat -->
   
               <!-- TO DO List -->
-              <div class="card">
+              <div class="card elevation-2">
                 <div class="card-header">
                   <h3 class="card-title">
                     <i class="ion ion-clipboard mr-1"></i>
@@ -462,7 +462,7 @@
             <section class="col-lg-5 connectedSortable">
   
               <!-- Map card -->
-              <div class="card bg-gradient-primary">
+              <div class="card bg-gradient-primary elevation-2">
                 <div class="card-header border-0">
                   <h3 class="card-title">
                     <i class="fas fa-map-marker-alt mr-1"></i>
@@ -471,7 +471,7 @@
                   <!-- card tools -->
                   <div class="card-tools">
                     <button type="button"
-                            class="btn btn-primary btn-sm daterange"
+                            class="btn btn-primary btn-sm daterange "
                             data-toggle="tooltip"
                             title="Date range">
                       <i class="far fa-calendar-alt"></i>
@@ -514,7 +514,7 @@
               <!-- /.card -->
   
               <!-- solid sales graph -->
-              <div class="card bg-gradient-info">
+              <div class="card bg-gradient-info elevation-2">
                 <div class="card-header border-0">
                   <h3 class="card-title">
                     <i class="fas fa-th mr-1"></i>
@@ -565,7 +565,7 @@
               <!-- /.card -->
   
               <!-- Calendar -->
-              <div class="card bg-gradient-success">
+              <div class="card bg-gradient-success elevation-2">
                 <div class="card-header border-0">
   
                   <h3 class="card-title">

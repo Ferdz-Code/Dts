@@ -7,11 +7,11 @@
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Create Document</h1>
+            <h1 class="m-0 text-dark ">Create Document</h1>
             </div><!-- /.col -->
 
             <div class="col-sm-6">
-                <button type="button" class="btn btn-primary float-right clearfix" data-toggle="modal" data-target="#modal-add" >
+                <button type="button" class="btn btn-primary float-right clearfix elevation-2" data-toggle="modal" data-target="#modal-add" >
                     Add Document</i></button>
             </div><!-- /.col -->
 
@@ -49,7 +49,7 @@
                 </div>
                 </div>
   
-                <div class="card-body table-responsive p-0">
+                <div class="card-body table-responsive p-0 elevation-2">
                 <table class="table table-hover">
                     <thead class="thead-light">
                     <tr>
@@ -121,7 +121,7 @@
                    </table>
                 </div>
             </div>
-            <div class="float-right">{{$documents->links()}}</div>
+            <div class="float-right ">{{$documents->links()}}</div>
             </div>
         </div>
     </div>
