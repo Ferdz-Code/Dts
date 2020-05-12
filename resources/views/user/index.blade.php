@@ -289,8 +289,7 @@
     <!-- ./MODAL BODY-->
 
 
-    </div>
-</div>
+
 
 
 <!-- jQuery -->

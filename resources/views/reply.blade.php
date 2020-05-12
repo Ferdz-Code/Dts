@@ -147,9 +147,10 @@
                   <td><b>Classification:</b></td>
                   <td>Outgoing</td>
               </tr>
-
-                <th><i class="fas fa-map-marker-alt mr-1"></i>Route Details</th>
-                <th></th>
+              <tr>
+                <td><i class="fas fa-map-marker-alt mr-1"></i>Route Details</td>
+                <td></td>
+              </tr>
               <tr>
                 <td><b>Date/Time Routed:</b></td>
                 <td>Jan/12/2019 - 10:00 AM</td>
