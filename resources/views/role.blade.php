@@ -1,4 +1,5 @@
 @extends('layouts.mylayout')
+@extends('layouts.dashboardlayout')
 
 @section('content')
 
@@ -52,25 +53,35 @@
                     <thead class="thead-light">
                     <tr>
                         <th>ID &nbsp;&nbsp; ↑↓</th>
-                        <th>Classification &nbsp; ↑↓</th>
-                        <th>Subject &nbsp;&nbsp; ↑↓</th>
-                        <th>Date Received &nbsp;&nbsp; ↑↓</th>
-                        <th>Time Received &nbsp;&nbsp; ↑↓</th>
+                        <th>Role &nbsp; ↑↓</th>
                         <th>Action &nbsp;&nbsp; ↑↓</th>
                     </tr>
                     </thead>
                     <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Received</td>
-                                <td>CSC Collaboration</td>
-                                <td>12/12/2020</td>
-                                <td>10:00 AM</td>
+                                <td>Admin</td>
                                 <td><i class="far fa-eye text-gray"></i>
                                     <i class="far fa-edit text-gray"></i>
                                     <i class="far fa-trash-alt text-red"></i>
                                 </td>
                             </tr> 
+                            <tr>
+                                <td>2</td>
+                                <td>ManCom</td>
+                                <td><i class="far fa-eye text-gray"></i>
+                                    <i class="far fa-edit text-gray"></i>
+                                    <i class="far fa-trash-alt text-red"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>User</td>
+                                <td><i class="far fa-eye text-gray"></i>
+                                    <i class="far fa-edit text-gray"></i>
+                                    <i class="far fa-trash-alt text-red"></i>
+                                </td>
+                            </tr>
                         <tbody>
                    </table>
                 </div>

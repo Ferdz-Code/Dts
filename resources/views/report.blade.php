@@ -1,89 +1,160 @@
 @extends('layouts.mylayout')
+@extends('layouts.reportlayout')
 
 @section('content')
 
-    <!-- Content Header (Page header) -->
+<!-- Content Header (Page header) -->
     <div class="content-header">
-        <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><i class="far fa-chart-bar text-black">&nbsp;</i>Report</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{ route('home')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Report</li>
-            </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+    <div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+        <h1 class="m-0 text-dark"><i class="far fa-chart-bar text-black">&nbsp;</i>Report</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="{{ route('home')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Report</li>
+        </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content-header -->
+<!-- /.content-header -->
 
 <section class="content">
-    
     <div class="container-fluid">
-        
       <div class="row">
+        <div class="col-12">
+          <!-- interactive chart -->
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="far fa-chart-bar"></i>
+                Interactive Area Chart
+              </h3>
 
-        <div class="col-md-12">
+              <div class="card-tools">
+                Real time
+                <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-sm active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-sm" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="interactive" style="height: 300px;"></div>
+            </div>
+            <!-- /.card-body-->
+          </div>
+          <!-- /.card -->
 
-            
-            <div class="row">
-            <div class="col-12">                
-            <div class="card card-success card-outline">
-                
-                <div class="card-header ">
-                <h3 class="card-title ">Report</h3>
-  
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-  
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-  
-                <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                    <thead class="thead-light">
-                    <tr>
-                        <th>ID &nbsp;&nbsp; ↑↓</th>
-                        <th>Classification &nbsp; ↑↓</th>
-                        <th>Subject &nbsp;&nbsp; ↑↓</th>
-                        <th>Date Received &nbsp;&nbsp; ↑↓</th>
-                        <th>Time Received &nbsp;&nbsp; ↑↓</th>
-                        <th>Action &nbsp;&nbsp; ↑↓</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Received</td>
-                                <td>CSC Collaboration</td>
-                                <td>12/12/2020</td>
-                                <td>10:00 AM</td>
-                                <td><i class="far fa-eye text-gray"></i>
-                                    <i class="far fa-edit text-gray"></i>
-                                    <i class="far fa-trash-alt text-red"></i>
-                                </td>
-                            </tr> 
-                        <tbody>
-                   </table>
-                </div>
-            </div>
-            </div>
         </div>
-    </div>
-</section> 
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
 
+      <div class="row">
+        <div class="col-md-6">
+          <!-- Line chart -->
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="far fa-chart-bar"></i>
+                Line Chart
+              </h3>
 
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="line-chart" style="height: 300px;"></div>
+            </div>
+            <!-- /.card-body-->
+          </div>
+          <!-- /.card -->
 
+          <!-- Area chart -->
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="far fa-chart-bar"></i>
+                Area Chart
+              </h3>
 
-    </div>
-</div>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="area-chart" style="height: 338px;" class="full-width-chart"></div>
+            </div>
+            <!-- /.card-body-->
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6">
+          <!-- Bar chart -->
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="far fa-chart-bar"></i>
+                Bar Chart
+              </h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="bar-chart" style="height: 300px;"></div>
+            </div>
+            <!-- /.card-body-->
+          </div>
+          <!-- /.card -->
+
+          <!-- Donut chart -->
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="far fa-chart-bar"></i>
+                Donut Chart
+              </h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="donut-chart" style="height: 300px;"></div>
+            </div>
+            <!-- /.card-body-->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
 
 @endsection
+

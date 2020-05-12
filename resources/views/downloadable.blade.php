@@ -1,4 +1,5 @@
 @extends('layouts.mylayout')
+@extends('layouts.dashboardlayout')
 
 @section('content')
 
@@ -21,63 +22,207 @@
     <!-- /.content-header -->
 
 <section class="content">
-    
     <div class="container-fluid">
-        
       <div class="row">
-
         <div class="col-md-12">
 
             <div class="row">
-            <div class="col-12">                
+            <div class="col-12">
             <div class="card card-success card-outline">
-                
-                <div class="card-header ">
-                <h3 class="card-title ">Downloadables</h3>
-  
+                <div class="card-header">
+                <h3 class="card-title">Downloadables</h3>
+
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-  
+
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                     </div>
                     </div>
                 </div>
                 </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+
+                    <div class="card-footer bg-white">
+
+                        <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
+
+                          <li>
+                            <span class="mailbox-attachment-icon">
+                                <i class="far fa-file-pdf" style="color: Crimson"></i></span>
+          
+                            <div class="mailbox-attachment-info">
+                              <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Sep2014-report.pdf</a>
+                                  <span class="mailbox-attachment-size clearfix mt-1">
+                                    <span>1,245 KB</span>
+                                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                  </span>
+                            </div>
+                          </li>
+
+                          <li>
+                            <span class="mailbox-attachment-icon">
+                                <i class="far fa-file-word" style="color: RoyalBlue;"></i></span>
+          
+                            <div class="mailbox-attachment-info">
+                              <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> App Description.docx</a>
+                                  <span class="mailbox-attachment-size clearfix mt-1">
+                                    <span>1,245 KB</span>
+                                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                  </span>
+                            </div>
+                          </li>
+
+                          <li>
+                            <span class="mailbox-attachment-icon">
+                                <i class="far fa-file-excel" style="color: ForestGreen;"></i></span>
+          
+                            <div class="mailbox-attachment-info">
+                              <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Payroll Sheets.xml</a>
+                                  <span class="mailbox-attachment-size clearfix mt-1">
+                                    <span>1,245 KB</span>
+                                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                  </span>
+                            </div>
+                          </li>
+
+                          <li>
+                            <span class="mailbox-attachment-icon">
+                                <i class="far fa-file-powerpoint" style="color: Brown"></i></span>
+          
+                            <div class="mailbox-attachment-info">
+                              <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Presentation.ppt</a>
+                                  <span class="mailbox-attachment-size clearfix mt-1">
+                                    <span>1,245 KB</span>
+                                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                  </span>
+                            </div>
+                          </li>
+
+                          <li>
+                            <span class="mailbox-attachment-icon">
+                                <i class="far fa-file-image" style="color: Orange"></i></span>
+          
+                            <div class="mailbox-attachment-info">
+                              <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> New Logo.jpg</a>
+                                  <span class="mailbox-attachment-size clearfix mt-1">
+                                    <span>1,245 KB</span>
+                                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                  </span>
+                            </div>
+                          </li>
+
+                          <li>
+                            <span class="mailbox-attachment-icon">
+                                <i class="far fa-file-archive" style="color: DarkOrchid"></i></span>
+          
+                            <div class="mailbox-attachment-info">
+                              <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> My Files.rar</a>
+                                  <span class="mailbox-attachment-size clearfix mt-1">
+                                    <span>1,245 KB</span>
+                                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                  </span>
+                            </div>
+                          </li>
+
+                        </ul>
+
+                        <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
+
+                            <li>
+                              <span class="mailbox-attachment-icon">
+                                  <i class="far fa-file-pdf" style="color: Crimson"></i></span>
+            
+                              <div class="mailbox-attachment-info">
+                                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Sep2014-report.pdf</a>
+                                    <span class="mailbox-attachment-size clearfix mt-1">
+                                      <span>1,245 KB</span>
+                                      <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                    </span>
+                              </div>
+                            </li>
   
-                <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                    <thead class="thead-light">
-                    <tr>
-                        <th>ID &nbsp;&nbsp; ↑↓</th>
-                        <th>Classification &nbsp; ↑↓</th>
-                        <th>Subject &nbsp;&nbsp; ↑↓</th>
-                        <th>Date Received &nbsp;&nbsp; ↑↓</th>
-                        <th>Time Received &nbsp;&nbsp; ↑↓</th>
-                        <th>Action &nbsp;&nbsp; ↑↓</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Received</td>
-                                <td>CSC Collaboration</td>
-                                <td>12/12/2020</td>
-                                <td>10:00 AM</td>
-                                <td><i class="far fa-eye text-gray"></i>
-                                    <i class="far fa-edit text-gray"></i>
-                                    <i class="far fa-trash-alt text-red"></i>
-                                </td>
-                            </tr> 
-                        <tbody>
-                   </table>
+                            <li>
+                              <span class="mailbox-attachment-icon">
+                                  <i class="far fa-file-word" style="color: RoyalBlue;"></i></span>
+            
+                              <div class="mailbox-attachment-info">
+                                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> App Description.docx</a>
+                                    <span class="mailbox-attachment-size clearfix mt-1">
+                                      <span>1,245 KB</span>
+                                      <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                    </span>
+                              </div>
+                            </li>
+  
+                            <li>
+                              <span class="mailbox-attachment-icon">
+                                  <i class="far fa-file-excel" style="color: ForestGreen;"></i></span>
+            
+                              <div class="mailbox-attachment-info">
+                                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Payroll Sheets.xml</a>
+                                    <span class="mailbox-attachment-size clearfix mt-1">
+                                      <span>1,245 KB</span>
+                                      <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                    </span>
+                              </div>
+                            </li>
+  
+                            <li>
+                              <span class="mailbox-attachment-icon">
+                                  <i class="far fa-file-powerpoint" style="color: Brown"></i></span>
+            
+                              <div class="mailbox-attachment-info">
+                                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Presentation.ppt</a>
+                                    <span class="mailbox-attachment-size clearfix mt-1">
+                                      <span>1,245 KB</span>
+                                      <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                    </span>
+                              </div>
+                            </li>
+  
+                            <li>
+                              <span class="mailbox-attachment-icon">
+                                  <i class="far fa-file-image" style="color: Orange"></i></span>
+            
+                              <div class="mailbox-attachment-info">
+                                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> New Logo.jpg</a>
+                                    <span class="mailbox-attachment-size clearfix mt-1">
+                                      <span>1,245 KB</span>
+                                      <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                    </span>
+                              </div>
+                            </li>
+  
+                            <li>
+                              <span class="mailbox-attachment-icon">
+                                  <i class="far fa-file-archive" style="color: DarkOrchid"></i></span>
+            
+                              <div class="mailbox-attachment-info">
+                                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> My Files.rar</a>
+                                    <span class="mailbox-attachment-size clearfix mt-1">
+                                      <span>1,245 KB</span>
+                                      <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                    </span>
+                              </div>
+                            </li>
+  
+                          </ul>
+
+                          
+
+                      </div>
                 </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
             </div>
             </div>
-        </div>
-    </div>
-</section> 
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
 
 
 
