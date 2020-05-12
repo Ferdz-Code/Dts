@@ -56,7 +56,6 @@
                         <th>ID &nbsp;&nbsp; ↑↓</th>
                         <th>Name &nbsp; ↑↓</th>
                         <th>Email &nbsp;&nbsp; ↑↓</th>
-                        <th>Password &nbsp;&nbsp; ↑↓</th>
                         <th>Created at &nbsp;&nbsp; ↑↓</th>
                         <th>Updated at &nbsp;&nbsp; ↑↓</th>
                         <th>Action &nbsp;&nbsp; ↑↓</th>
@@ -68,7 +67,6 @@
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td>{{$user->password}}</td>
                                 <td>{{$user->created_at}}</td>
                                 <td>{{$user->updated_at}}</td>
                                 <td>
@@ -112,7 +110,7 @@
 <!----------------------------------------------------------ADD DOCUMENT MODAL------------------------------------------------>            
     <!-- MODAL BODY-->
         <div class="modal fade" id="modal-add">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-s">
                 <div class="modal-content">
                 <!-- MODAL HEADER-->
                     <div class="modal-header">
@@ -160,7 +158,7 @@
 <!----------------------------------------------------------EDIT DOCUMENT MODAL----------------------------------------------->            
     <!-- MODAL BODY-->
         <div class="modal fade" id="modal-edit">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-s">
                 <div class="modal-content">
                 <!-- MODAL HEADER-->
                     <div class="modal-header">
@@ -212,7 +210,7 @@
                 <div class="modal-content">
                 <!-- MODAL HEADER-->
                     <div class="modal-header">
-                    <h4 class="modal-title"><i class="far fa-trash-alt text-red">&nbsp;</i>Delete User</h4>
+                    <h4 class="modal-title"><i class="far fa-trash-alt text-black">&nbsp;</i>Delete User</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -233,7 +231,7 @@
                     </div>
                     <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete&nbsp;<i class="fa fa-trash"></i></button>
+                    <button type="submit" class="btn btn-danger">Delete&nbsp;<i class="far fa-trash-alt"></i></button>
                     </div>
                     </form> 
                 </div>
@@ -244,7 +242,7 @@
 <!----------------------------------------------------------VIEW DOCUMENT MODAL----------------------------------------------->            
     <!-- MODAL BODY-->
         <div class="modal fade" id="modal-view">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-s">
                 <div class="modal-content">
                 <!-- MODAL HEADER-->
                     <div class="modal-header">
@@ -265,30 +263,28 @@
                             <div class="form-group">
                             <label>Name</label>
                             <input type="text" name="name" placeholder="" id="name" class="form-control" readonly>
-                            </div>    
+                            </div>   
+                            <div class="form-group">
                             <label>Email</label>
-                                <input type="email" name="email" placeholder="" id="email" class="form-control" readonly>
-                            </div>
+                            <input type="email" name="email" placeholder="" id="email" class="form-control" readonly>
+                            </div>  
                             <div class="form-group">
                             <label>Password</label>
                                 <input type="password" name="password" placeholder="" id="password" class="form-control" readonly>
                             </div>
                                 <input type="hidden" id="user_id" name="user_id">
-                           
-                            </div>
-                            
+                        </div>    
                         </div>
                         </div>
-                        
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <!--<button type="submit" class="btn btn-primary">View</button>-->
+                        <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!--<button type="submit" class="btn btn-primary">View</button>-->
+                        </div>
                     </div>
                 </form> 
                 </div>
                 </div>
-        </div>
+        
     <!-- ./MODAL BODY-->
 
 

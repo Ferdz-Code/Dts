@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\User;
 
 class UserController extends Controller
 {
@@ -40,7 +40,7 @@ class UserController extends Controller
     {
         $user = array
         (
-            'name'     => $request->name,
+            'name' => $request->name,
             'email'    => $request->email,
             'password' => $request->password
         );
@@ -108,10 +108,12 @@ class UserController extends Controller
         //$deleteuser->user();
         //return redirect()->route('user.index')->with('success','User Deleted Successfully!');
 
-    public function destroy(Request $id)
+    public function destroy(Request $user)
     {
-        $deleteuser = User::where('id', $id)->delete();
-
+        //$deleteuser = User::where('id', $id)->delete();
+        //return redirect()->route('user.index')->with('success','Product deleted Successfully!');
+        $deleteuser = User::findOrFail($user->user_id);
+        $deleteuser->delete();
         return redirect()->route('user.index')->with('success','Product deleted Successfully!');
     }
    
