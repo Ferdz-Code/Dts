@@ -23,6 +23,7 @@ class CreateDocumentsTable extends Migration
             $table->string('mode_of_delivery');
             $table->string('addressee');
             $table->string('office_name');
+            $table->string('document_file');
             $table->string('date_received');
             $table->string('time_received');
             $table->timestamps();

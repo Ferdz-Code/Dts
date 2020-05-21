@@ -5,17 +5,15 @@
 
     <!-- Content Header (Page header) -->
     <div class="content-header">
-        <div class="container-fluid">
+        <div class="container-fluid px-4 mt-2">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0 text-dark ">Create Document</h1>
+            <h1 class="m-0 text-dark"><i class="far fa-folder text-black">&nbsp;</i>Documents</h1>
             </div><!-- /.col -->
-
             <div class="col-sm-6">
                 <button type="button" class="btn btn-primary float-right clearfix elevation-2" data-toggle="modal" data-target="#modal-add" >
                     Add Document</i></button>
             </div><!-- /.col -->
-
         </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -23,20 +21,17 @@
 
 <section class="content">
     
-    <div class="container-fluid">
-        
-      <div class="row">
-
-        <div class="col-md-12">
-            @if($message = Session::get('success'))    
-            <div class="alert alert-success alert-auto" role="alert">{{$message}}</div>
-            @endif
+        <div class="col-12">
+            
             
             <div class="row">
-            <div class="col-12">                
-            <div class="card card-danger card-outline">
+                <div class="col-12 px-4">     
+                    @if($message = Session::get('success'))    
+            <div class="alert alert-success alert-auto" role="alert">{{$message}}</div>
+            @endif           
+                <div class="card elevation-2">
                 
-                <div class="card-header ">
+                    <div class="card-header p-4">
                 <h3 class="card-title ">Newly Created Documents</h3>
   
                 <div class="card-tools">
@@ -57,6 +52,7 @@
                         <th>ID &nbsp;&nbsp; ↑↓</th>
                         <th>Classification &nbsp; ↑↓</th>
                         <th>Subject &nbsp;&nbsp; ↑↓</th>
+                        <th>Attachment &nbsp;&nbsp; ↑↓</th>
                         <th>Date Received &nbsp;&nbsp; ↑↓</th>
                         <th>Time Received &nbsp;&nbsp; ↑↓</th>
                         <th>Action &nbsp;&nbsp; ↑↓</th>
@@ -74,6 +70,7 @@
                             <!--<td>{{$document->mode_of_delivery}}</td>-->
                             <!--<td>{{$document->addressee}}</td>-->
                             <!--<td>{{$document->office_name}}</td>-->
+                                <td>{{$document->document_file}}</td>
                                 <td>{{$document->date_received}}</td>
                                 <td>{{$document->time_received}}</td>
                                 <td>
@@ -88,6 +85,7 @@
                                         data-mode_of_delivery="{{$document ->mode_of_delivery}}"
                                         data-addressee="{{$document ->addressee}}"
                                         data-office_name="{{$document ->office_name}}"
+                                        data-document_file="{{$document->document_file}}"
                                         data-date_received="{{$document ->date_received}}"
                                         data-time_received="{{$document ->time_received}}"
                                         data-toggle="modal" data-target="#modal-view"><i class="far fa-eye text-gray"></i>
@@ -105,6 +103,7 @@
                                         data-mode_of_delivery="{{$document ->mode_of_delivery}}"
                                         data-addressee="{{$document ->addressee}}"
                                         data-office_name="{{$document ->office_name}}"
+                                        data-document_file="{{$document->document_file}}"
                                         data-date_received="{{$document ->date_received}}"
                                         data-time_received="{{$document ->time_received}}"
                                         data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit text-gray"></i>
@@ -124,8 +123,7 @@
             </div>
             <div class="float-right ">{{$documents->links()}}</div>
             </div>
-        </div>
-    </div>
+
 </section> 
 
 <!----------------------------------------------------------ADD DOCUMENT MODAL------------------------------------------------>            
@@ -144,30 +142,34 @@
 
                     <!-- MODAL BODY-->
                     <div class="modal-body">
-                    <form action="{{route('document.store')}}" method="POST">
+                    <form action="{{route('document.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                            <label>Classification</label>
-                                <input type="text" name="classification" placeholder="" id="classification" class="form-control">
+                            <label>Classification*</label>
+                                <input type="text" name="classification" placeholder="" id="classification" class="form-control" required>
                             </div>
                             <div class="form-group">
-                            <label>Subject</label>
-                                <input type="text" name="subject" placeholder="" id="subject" class="form-control">
+                            <label>Subject*</label>
+                                <input type="text" name="subject" placeholder="" id="subject" class="form-control" required>
                             </div>
                             <div class="form-group">
-                            <label>Document Type</label>
-                                <input type="text" name="document_type" placeholder="" id="document_type" class="form-control">
+                            <label>Document Type*</label>
+                                <input type="text" name="document_type" placeholder="" id="document_type" class="form-control" required>
                             </div>
                             <div class="form-group">
-                            <label>Office Name</label>
-                                <input type="text" name="office_name" placeholder="" id="office_name" class="form-control">
+                            <label>Office Name*</label>
+                                <input type="text" name="office_name" placeholder="" id="office_name" class="form-control" required>
                             </div>
                             <div class="form-group">
-                            <label>Addressee</label>
-                                <input type="text" name="addressee" placeholder="" id="addressee" class="form-control">
+                            <label>Addressee*</label>
+                                <input type="text" name="addressee" placeholder="" id="addressee" class="form-control" required>
                             </div>
+                            <div class="form-group">
+                            <label>Upload*</label><br>
+                                    <input type="file" name="document_file" placeholder="" id="document_file" required>
+                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -236,7 +238,7 @@
 
                     <!-- MODAL BODY-->
                     <div class="modal-body">
-                    <form action="{{route('document.update','document_id')}}" method="POST">
+                    <form action="{{route('document.update','document_id')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -261,6 +263,10 @@
                             <div class="form-group">
                             <label>Addressee</label>
                                 <input type="text" name="addressee" placeholder="" id="addressee" class="form-control">
+                            </div>
+                            <div class="form-group">
+                            <label>Upload</label><br>
+                                <input type="file" name="document_file" placeholder="" id="document_file">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -329,7 +335,7 @@
 
                     <!-- MODAL BODY-->
                     <div class="modal-body">
-                    <form action="{{route('document.destroy','document_id')}}" method="POST">
+                    <form action="{{route('document.destroy','document_id')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('DELETE')
                     <div class="row">
@@ -366,7 +372,7 @@
 
                     <!-- MODAL BODY-->
                     <div class="modal-body">
-                    <form action="{{route('document.show','document_id')}}" method="GET">
+                    <form action="{{route('document.show','document_id')}}" method="GET" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -390,6 +396,10 @@
                             <div class="form-group">
                             <label>Addressee</label>
                                 <input type="text" name="addressee" placeholder="" id="addressee" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                            <label>Upload</label><br>
+                                <input type="text" name="document_file" placeholder="" id="document_file" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -499,6 +509,7 @@
     var mode_of_delivery = button.data('mode_of_delivery')
     var addressee = button.data('addressee')
     var office_name = button.data('office_name')
+    var document_file = button.data('document_file')
     var date_received = button.data('date_received')
     var time_received = button.data('time_received')
     var document_id = button.data('document_id')
@@ -514,6 +525,7 @@
     modal.find('.modal-body #mode_of_delivery').val(mode_of_delivery);
     modal.find('.modal-body #addressee').val(addressee);
     modal.find('.modal-body #office_name').val(office_name);
+    modal.find('.modal-body #document_file').val(document_file);
     modal.find('.modal-body #date_received').val(date_received);
     modal.find('.modal-body #time_received').val(time_received);
     modal.find('.modal-body #document_id').val(document_id);
@@ -543,6 +555,7 @@
     var mode_of_delivery = button.data('mode_of_delivery')
     var addressee = button.data('addressee')
     var office_name = button.data('office_name')
+    var document_file = button.data('document_file')
     var date_received = button.data('date_received')
     var time_received = button.data('time_received')
     var document_id = button.data('document_id')
@@ -558,6 +571,7 @@
     modal.find('.modal-body #mode_of_delivery').val(mode_of_delivery);
     modal.find('.modal-body #addressee').val(addressee);
     modal.find('.modal-body #office_name').val(office_name);
+    modal.find('.modal-body #document_file').val(document_file);
     modal.find('.modal-body #date_received').val(date_received);
     modal.find('.modal-body #time_received').val(time_received);
     modal.find('.modal-body #document_id').val(document_id);

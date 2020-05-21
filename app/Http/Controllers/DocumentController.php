@@ -37,6 +37,15 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->document_file->getClientOriginalName()){
+            $ext = $request->document_file->getClientOriginalExtension();
+            $document_file = date('Y-m-d-His').rand(1,99999).'.'.$ext;
+            $request->document_file->storeAs('public/files',$document_file);
+       }
+       else
+       {
+           $document_sfile = '';
+       }
         $document = array
         (
             'classification'   => $request->classification,
@@ -46,7 +55,8 @@ class DocumentController extends Controller
             'sender_profile'   => $request->sender_profile,
             'mode_of_delivery' => $request->mode_of_delivery,
             'addressee'        => $request->addressee,
-            'office_name'      => $request->office_name,
+            'office_name'      => $request->office_name, 
+            'document_file'    => $request->document_file,
             'date_received'    => $request->date_received,
             'time_received'    => $request->time_received
         );
@@ -97,6 +107,7 @@ class DocumentController extends Controller
             'mode_of_delivery' => $request->mode_of_delivery,
             'addressee'        => $request->addressee,
             'office_name'      => $request->office_name,
+            'document_file'    => $request->document_file,
             'date_received'    => $request->date_received,
             'time_received'    => $request->time_received
         );

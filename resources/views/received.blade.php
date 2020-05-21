@@ -5,7 +5,7 @@
 
 <!-- Content Header (Page header) -->
         <div class="content-header">
-            <div class="container-fluid">
+            <div class="container-fluid px-4 mt-2">
             <div class="row mb-2">
                 <div class="col-sm-6">
                 <h1 class="m-0 text-dark"><i class="far fa-folder text-black">&nbsp;</i>Documents</h1>
@@ -24,10 +24,10 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">                
-                <div class="card card-success card-outline">
-                    <div class="card-header ">
-                        <h3 class="card-title ">Received</h3>
+            <div class="col-12 px-4">                
+                <div class="card elevation-2">
+                    <div class="card-header p-4">
+                        <h3 class="card-title">Received</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
                                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">

@@ -3,9 +3,9 @@
 
 @section('content')
 
-<!-- Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
         <div class="content-header">
-            <div class="container-fluid">
+            <div class="container-fluid px-4 mt-2">
             <div class="row mb-2">
                 <div class="col-sm-6">
                 <h1 class="m-0 text-dark"><i class="far fa-envelope text-black">&nbsp;</i>Inbox</h1>
@@ -19,14 +19,14 @@
             </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
-<!-- /.content-header -->
+        <!-- /.content-header -->
 
-<section class="content">
-    <div class="container-fluid">
+    <section class="content">
+        <div class="container-fluid">
         <div class="row">
-            <div class="col-12">                
-                <div class="card card-success card-outline">
-                    <div class="card-header ">
+            <div class="col-12 px-4">                
+                <div class="card elevation-2">
+                    <div class="card-header p-4">
                         <h3 class="card-title ">Closed</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">

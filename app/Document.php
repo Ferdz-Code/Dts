@@ -16,6 +16,7 @@ class Document extends Model
         'mode_of_delivery',
         'addressee',
         'office_name',
+        'document_file',
         'date_received',
         'time_received'
     ];
