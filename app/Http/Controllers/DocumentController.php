@@ -14,7 +14,7 @@ class DocumentController extends Controller
      */
     public function index(Request $request)
     {
-        $document ['documents']=Document::OrderBy('id','asc')->paginate(10);
+        $document ['documents']=Document::OrderBy('id','asc')->paginate(15);
 
         return view('document.index',$document);
     }
@@ -41,10 +41,11 @@ class DocumentController extends Controller
             $ext = $request->document_file->getClientOriginalExtension();
             $document_file = date('Y-m-d-His').rand(1,99999).'.'.$ext;
             $request->document_file->storeAs('public/files',$document_file);
+
        }
        else
        {
-           $document_sfile = '';
+           $document_file = '';
        }
         $document = array
         (
