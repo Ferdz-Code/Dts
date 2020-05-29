@@ -14,7 +14,7 @@ class DocumentController extends Controller
      */
     public function index(Request $request)
     {
-        $document ['documents']=Document::latest()->paginate(5);
+        $document ['documents']=Document::OrderBy('id','asc')->paginate(15);
 
         return view('document.index',$document);
     }
@@ -37,18 +37,23 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
+          
         
         if ($request->document_file->getClientOriginalName()){
+        $ext = $request->document_file->getClientOriginalExtension();
+        $document_path_file = date('Y-m-d-His').rand(1,99999).'.'.$ext;
+        $request->document_file->storeAs('public/files',$document_path_file);
 
-            $ext = $request->document_file->getClientOriginalExtension();
-
-            $file = date('Y-m-d-His').rand(1,99999).'.'.$ext;
-
-            $request->document_file->storeAs('public/files',$file);
-       }
+          //if ($request->document_file->getClientOriginalName()){
+            //$ext = $request->document_file->getClientOriginalExtension();
+            //$document_name = date('Y-m-d-His').rand(1,99999).'.'.$ext;
+            ///$document_file->storeAs('public/files',$document_file);
+            ///$request->document_name->storeAs('public/files',$document_name);
+            //$document_path_file = storage_path().'/app/public/files/'.$document_name;  
+        }
        else
        {
-           $file = '';
+           $document_path_file = '';
        }
         $document = array
         (
@@ -60,7 +65,7 @@ class DocumentController extends Controller
             'mode_of_delivery' => $request->mode_of_delivery,
             'addressee'        => $request->addressee,
             'office_name'      => $request->office_name, 
-            'document_file'    => $file, // Save whether file uploaded or not
+            'document_file'    => $document_path_file, // Save whether file uploaded or not
             'date_received'    => $request->date_received,
             'time_received'    => $request->time_received
         );
@@ -111,7 +116,7 @@ class DocumentController extends Controller
             'mode_of_delivery' => $request->mode_of_delivery,
             'addressee'        => $request->addressee,
             'office_name'      => $request->office_name,
-            'document_file'    => $request->document_file,
+            //'document_file'    => $request->document_file,
             'date_received'    => $request->date_received,
             'time_received'    => $request->time_received
         );

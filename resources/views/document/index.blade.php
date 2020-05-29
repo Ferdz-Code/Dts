@@ -52,6 +52,7 @@
                         <th>ID &nbsp;&nbsp; ↑↓</th>
                         <th>Classification &nbsp; ↑↓</th>
                         <th>Subject &nbsp;&nbsp; ↑↓</th>
+                        
                         <th>Attachment &nbsp;&nbsp; ↑↓</th>
                         <th>Date Received &nbsp;&nbsp; ↑↓</th>
                         <th>Time Received &nbsp;&nbsp; ↑↓</th>
@@ -64,12 +65,6 @@
                                 <td>{{$document->id}}</td>
                                 <td>{{$document->classification}}</td>
                                 <td>{{$document->subject}}</td>
-                            <!--<td>{{$document->document_type}}</td>-->
-                            <!--<td>{{$document->sender_name}}</td>-->
-                            <!--<td>{{$document->sender_profile}}</td>-->
-                            <!--<td>{{$document->mode_of_delivery}}</td>-->
-                            <!--<td>{{$document->addressee}}</td>-->
-                            <!--<td>{{$document->office_name}}</td>-->
                                 <td>{{$document->document_file}}</td>
                                 <td>{{$document->date_received}}</td>
                                 <td>{{$document->time_received}}</td>
@@ -111,7 +106,12 @@
                                     <!------------------------------/EDIT BUTTON----------------------------------->
         
                                     <!-------------------------------DELETE BUTTON--------------------------------->
-                                    <a href="" data-document_id="{{$document ->id}}" data-toggle="modal" data-target="#modal-delete"><i class="far fa-trash-alt text-red"></i></a>
+                                    <a href="" 
+                                    data-document_id="{{$document ->id}}" 
+                                    data-classification="{{$document ->classification}}"
+                                    data-subject="{{$document ->subject}}"
+                                    data-sender_name="{{$document ->sender_name}}"
+                                    data-toggle="modal" data-target="#modal-delete"><i class="far fa-trash-alt text-red"></i></a>
                                     <!------------------------------/DELETE BUTTON--------------------------------->
         
                                 </td>
@@ -266,7 +266,7 @@
                             </div>
                             <div class="form-group">
                             <label>Upload</label><br>
-                                <input type="file" name="document_file" placeholder="" id="document_file">
+                                <input type="text" name="document_file" placeholder="" id="document_file" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -340,10 +340,29 @@
                     @method('DELETE')
                     <div class="row">
                         <div class="col-md-12">
-                                <input type="hidden" id="document_id" name="document_id">
-                                <p>This is permanent and cannot be undo. Are you sure?</p>
+                            <p>This is permanent and cannot be undo. Are you sure?</p>
+                            <div class="form-group">
+                            <label>Document ID</label>
+                            <input type="text" name="document_id" placeholder="" id="document_id" class="form-control" readonly>
+                            </div>
+
+                            <div class="form-group">
+                            <label>Classification</label>
+                            <input type="text" name="classification" placeholder="" id="classification" class="form-control" readonly>
+                            </div>
+
+                            <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="subject" placeholder="" id="subject" class="form-control" readonly>
+                            </div>
+
+                            <div class="form-group">
+                            <label>Sender</label>
+                            <input type="text" name="sender_name" placeholder="" id="sender_name" class="form-control" readonly>
+                            </div>
+
                         </div>
-                        </div>
+                    </div>
                     </div>
                     <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -536,11 +555,17 @@
     
     var button = $(event.relatedTarget)
     var document_id = button.data('document_id')
+    var classification = button.data('classification')
+    var subject = button.data('subject')
+    var sender_name = button.data('sender_name')
     
     var modal = $(this)
     
     //modal.find('.modal-title').text('Delete Document');
     modal.find('.modal-body #document_id').val(document_id);
+    modal.find('.modal-body #classification').val(classification);
+    modal.find('.modal-body #subject').val(subject);
+    modal.find('.modal-body #sender_name').val(sender_name);
     });
     
     //------------------VIEW MODAL---------------------//
