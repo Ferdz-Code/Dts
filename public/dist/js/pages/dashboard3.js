@@ -23,6 +23,11 @@ $(function () {
         {
           backgroundColor: '#ced4da',
           borderColor    : '#ced4da',
+          data           : [500, 1000, 1500, 1250, 1350, 1250, 1500]
+        },
+        {
+          backgroundColor: '#ff0000', 
+          borderColor    : '#ff0000',
           data           : [700, 1700, 2700, 2000, 1800, 1500, 2000]
         }
       ]
@@ -58,7 +63,7 @@ $(function () {
                 value /= 1000
                 value += 'k'
               }
-              return '$' + value
+              return '' + value
             }
           }, ticksStyle)
         }],

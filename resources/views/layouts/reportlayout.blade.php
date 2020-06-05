@@ -270,19 +270,19 @@
 
     var donutData = [
       {
-        label: 'Series2',
+        label: 'Received',
         data : 30,
-        color: '#3c8dbc'
+        color: '#35aec1'
       },
       {
-        label: 'Series3',
+        label: 'Outgoing',
         data : 20,
-        color: '#0073b7'
+        color: '#44b25d'
       },
       {
-        label: 'Series4',
+        label: 'Internal',
         data : 50,
-        color: '#00c0ef'
+        color: '#ffc720'
       }
     ]
     $.plot('#donut-chart', donutData, {

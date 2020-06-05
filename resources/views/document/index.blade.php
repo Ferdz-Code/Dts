@@ -54,6 +54,7 @@
                         <th>Subject &nbsp;&nbsp; ↑↓</th>
                         
                         <th>Attachment &nbsp;&nbsp; ↑↓</th>
+                        <th>Download &nbsp;&nbsp; ↑↓</th>
                         <th>Date Received &nbsp;&nbsp; ↑↓</th>
                         <th>Time Received &nbsp;&nbsp; ↑↓</th>
                         <th>Action &nbsp;&nbsp; ↑↓</th>
@@ -66,52 +67,58 @@
                                 <td>{{$document->classification}}</td>
                                 <td>{{$document->subject}}</td>
                                 <td>{{$document->document_file}}</td>
+                                <td><a href="{{ asset('/app/public/files/'.$document->document_file) }}"><i class="fas fa-download text-black"></i></a></td>
+                                <!--src="{{ asset('js/app.js') }}"-->
                                 <td>{{$document->date_received}}</td>
                                 <td>{{$document->time_received}}</td>
                                 <td>
+                                    <!-------------------------------ROUTE BUTTON---------------------------------->
+                                        <a href="" 
+                                            data-toggle="modal" data-target="#modal-route"><i class="fas fa-reply text-gray"></i>
+                                        </a>
                                     <!-------------------------------VIEW BUTTON----------------------------------->
-                                    <a href="" 
-                                        data-document_id="{{$document ->id}}"
-                                        data-classification="{{$document ->classification}}"
-                                        data-subject="{{$document ->subject}}"
-                                        data-document_type="{{$document ->document_type}}"
-                                        data-sender_name="{{$document ->sender_name}}"
-                                        data-sender_profile="{{$document ->sender_profile}}"
-                                        data-mode_of_delivery="{{$document ->mode_of_delivery}}"
-                                        data-addressee="{{$document ->addressee}}"
-                                        data-office_name="{{$document ->office_name}}"
-                                        data-document_file="{{$document->document_file}}"
-                                        data-date_received="{{$document ->date_received}}"
-                                        data-time_received="{{$document ->time_received}}"
-                                        data-toggle="modal" data-target="#modal-view"><i class="far fa-eye text-gray"></i>
-                                    </a>
+                                        <a href="" 
+                                            data-document_id="{{$document ->id}}"
+                                            data-classification="{{$document ->classification}}"
+                                            data-subject="{{$document ->subject}}"
+                                            data-document_type="{{$document ->document_type}}"
+                                            data-sender_name="{{$document ->sender_name}}"
+                                            data-sender_profile="{{$document ->sender_profile}}"
+                                            data-mode_of_delivery="{{$document ->mode_of_delivery}}"
+                                            data-addressee="{{$document ->addressee}}"
+                                            data-office_name="{{$document ->office_name}}"
+                                            data-document_file="{{$document->document_file}}"
+                                            data-date_received="{{$document ->date_received}}"
+                                            data-time_received="{{$document ->time_received}}"
+                                            data-toggle="modal" data-target="#modal-view"><i class="far fa-eye text-gray"></i>
+                                        </a>
                                     <!------------------------------/VIEW BUTTON----------------------------------->
                                     
                                     <!-------------------------------EDIT BUTTON----------------------------------->
-                                    <a href="" 
-                                        data-document_id="{{$document ->id}}"
-                                        data-classification="{{$document ->classification}}"
-                                        data-subject="{{$document ->subject}}"
-                                        data-document_type="{{$document ->document_type}}"
-                                        data-sender_name="{{$document ->sender_name}}"
-                                        data-sender_profile="{{$document ->sender_profile}}"
-                                        data-mode_of_delivery="{{$document ->mode_of_delivery}}"
-                                        data-addressee="{{$document ->addressee}}"
-                                        data-office_name="{{$document ->office_name}}"
-                                        data-document_file="{{$document->document_file}}"
-                                        data-date_received="{{$document ->date_received}}"
-                                        data-time_received="{{$document ->time_received}}"
-                                        data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit text-gray"></i>
-                                    </a>
+                                        <a href="" 
+                                            data-document_id="{{$document ->id}}"
+                                            data-classification="{{$document ->classification}}"
+                                            data-subject="{{$document ->subject}}"
+                                            data-document_type="{{$document ->document_type}}"
+                                            data-sender_name="{{$document ->sender_name}}"
+                                            data-sender_profile="{{$document ->sender_profile}}"
+                                            data-mode_of_delivery="{{$document ->mode_of_delivery}}"
+                                            data-addressee="{{$document ->addressee}}"
+                                            data-office_name="{{$document ->office_name}}"
+                                            data-document_file="{{$document->document_file}}"
+                                            data-date_received="{{$document ->date_received}}"
+                                            data-time_received="{{$document ->time_received}}"
+                                            data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit text-gray"></i>
+                                        </a>
                                     <!------------------------------/EDIT BUTTON----------------------------------->
         
                                     <!-------------------------------DELETE BUTTON--------------------------------->
-                                    <a href="" 
-                                    data-document_id="{{$document ->id}}" 
-                                    data-classification="{{$document ->classification}}"
-                                    data-subject="{{$document ->subject}}"
-                                    data-sender_name="{{$document ->sender_name}}"
-                                    data-toggle="modal" data-target="#modal-delete"><i class="far fa-trash-alt text-red"></i></a>
+                                        <a href="" 
+                                        data-document_id="{{$document ->id}}" 
+                                        data-classification="{{$document ->classification}}"
+                                        data-subject="{{$document ->subject}}"
+                                        data-sender_name="{{$document ->sender_name}}"
+                                        data-toggle="modal" data-target="#modal-delete"><i class="far fa-trash-alt text-red"></i></a>
                                     <!------------------------------/DELETE BUTTON--------------------------------->
         
                                 </td>
@@ -125,6 +132,86 @@
             </div>
 
 </section> 
+<!----------------------------------------------------------DOCUMENT ROUTE MODAL---------------------------------------------->
+    <!-- MODAL BODY-->
+    <div class="modal fade" id="modal-route">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h4 class="modal-title"><i class="fas fa-reply">&nbsp;</i>Route Document</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Route to:</label>
+            <select class="form-control select2bs4" style="width: 100%;">
+            <option selected="true" disabled="disabled">-- Select Route--</option>
+            <option>Ferdinand Gacis</option>
+            <option>Marlon Aguilar</option>
+            <option>Maria Loren Ignacio</option>
+            <option>Jonar Fabula</option>
+            </select>
+          </div>
+           <div class="row">
+           <div class="col-md-6">
+                <div class="form-group">
+                    <label>Department:</label>
+                    <select class="form-control select2bs4" style="width: 100%;">
+                    <option selected="true" disabled="disabled">-- Select Department--</option>
+                    <option>ICT</option>
+                    <option>BRO</option>
+                    <option>CMEO</option>
+                    <option>ODDG</option>
+                    <option>RMTD</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Action Needed:</label>
+                    <select class="form-control select2bs4" style="width: 100%;">
+                    <option selected="true" disabled="disabled">-- Select Action--</option>
+                    <option>For Review</option>
+                    <option>For Signature</option>
+                    <option>For keeps</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label>Date:</label>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                <i class="far fa-calendar-alt"></i>
+                </span>
+                </div>
+                <input type="date" class="form-control float-right" id="date">
+                </div>
+                </div>
+                <div class="form-group">
+                <label>Time:</label>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                <i class="far fa-clock"></i>
+                </span>
+                </div>
+                <input type="time" class="form-control float-right" id="time">
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <label>Comments:</label>
+            <textarea class="form-control" rows="3" placeholder="Enter comments here..."></textarea>
+            </div> 
+        </div>
+            <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</i></button>
+            <button type="submit" class="btn btn-primary">Route&nbsp;<i class="fas fa-reply"></i></button>
+        </div>
+      </div></div></div>
+    <!-- ./MODAL BODY-->  
 
 <!----------------------------------------------------------ADD DOCUMENT MODAL------------------------------------------------>            
     <!-- MODAL BODY-->
@@ -146,46 +233,93 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                            <label>Classification*</label>
-                                <input type="text" name="classification" placeholder="" id="classification" class="form-control" required>
+                            
+                            <div class="form-group" >
+                                <label>CLassification:</label>
+                                <select class="form-control" name="classification" placeholder="" id="classification" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Classification --</option>
+                                <option value="Received">Received</option>
+                                <option value="Outgoing">Outgoing</option>
+                                <option value="Internal">Internal</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Subject*</label>
-                                <input type="text" name="subject" placeholder="" id="subject" class="form-control" required>
+
+                            <div class="form-group" >
+                                <label>Document Type*</label>
+                                <select class="form-control" name="document_type" placeholder="" id="document_type" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Document Type --</option>
+                                <option value="Memo">Memo</option>
+                                <option value="News Prints">News Prints</option>
+                                <option value="Invitations">Invitations</option>
+                                <option value="Magazines">Magazines</option>
+                                <option value="Forms">Forms</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Document Type*</label>
-                                <input type="text" name="document_type" placeholder="" id="document_type" class="form-control" required>
+
+                            <div class="form-group" >
+                                <label>Office Name*</label>
+                                <select class="form-control" name="office_name" placeholder="" id="office_name" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Office Name --</option>
+                                <option value="CSC">CSC - Civil Service Commission</option>
+                                <option value="BOC">BOC - Beareau of Customs</option>
+                                <option value="COA">COA - Commission on Audit</option>
+                                <option value="DOF">DOF - Department Of Finance</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Office Name*</label>
-                                <input type="text" name="office_name" placeholder="" id="office_name" class="form-control" required>
+                            
+                            <div class="form-group" >
+                                <label>Addressee*</label>
+                                <select class="form-control" name="addressee" placeholder="" id="addressee" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Addressee--</option>
+                                <option value="Ferdinand Gacis">Ferdinand Gacis</option>
+                                <option value="Maria Loren Ignacio">Maria Loren Ignacio</option>
+                                <option value="Marlon Aguilar">Marlon Aguilar</option>
+                                <option value="Jonar Fabula">Jonar Fabula</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Addressee*</label>
-                                <input type="text" name="addressee" placeholder="" id="addressee" class="form-control" required>
+
+                            <div class="form-group" >
+                                <label>Mode of Delivery</label>
+                                <select class="form-control" name="mode_of_delivery" placeholder="" id="mode_of_delivery" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Mode of Delivery--</option>
+                                <option value="Courier">Courier</option>
+                                <option value="Email">Email</option>
+                                <option value="Messenger">Messenger</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Snail Mail">Snail Mail</option>
+                                </select>
                             </div>
+
                             <div class="form-group">
                             <label>Upload*</label><br>
                                     <input type="file" name="document_file" placeholder="" id="document_file" required>
                              </div>
                         </div>
                         <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Subject*</label>
+                                    <input type="text" name="subject" placeholder="" id="subject" class="form-control" required>
+                                </div>
+
                             <div class="form-group">
                             <label>Sender's Name</label>
                                 <input type="text" name="sender_name" placeholder="" id="sender_name" class="form-control">
                             </div>
-                            <div class="form-group">
-                            <label>Sender's Profile</label>
-                                <input type="text" name="sender_profile" placeholder="" id="sender_profile" class="form-control">
+
+                            <div class="form-group" >
+                                <label>Sender's Profile</label>
+                                <select class="form-control" name="sender_profile" placeholder="" id="sender_profile" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Sender's Profile--</option>
+                                <option value="NGA">NGA - National Government Agencies</option>
+                                <option value="LGU">LGU - Local Government Unit</option>
+                                <option value="SUC">SUC - Schools and Universities Commision</option>
+                                <option value="Private">Private</option>
+                                </select>
                             </div>
+
                             <div class="form-group">
-                            <label>Mode of Delivery</label>
-                                <input type="text" name="mode_of_delivery" placeholder="" id="name" class="form-control">
-                            </div>
-                            <div class="form-group">
-                            <label>Date received:</label>
+                            <label>Date Received:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -196,7 +330,7 @@
                             </div>
                             </div>
                             <div class="form-group">
-                            <label>Time received:</label>
+                            <label>Time Received:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -243,27 +377,63 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                            <label>Classification</label>
-                                <input type="text" name="classification" placeholder="" id="classification" class="form-control">
+
+                            <div class="form-group" >
+                                <label>CLassification:</label>
+                                <select class="form-control" name="classification" placeholder="" id="classification" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Classification --</option>
+                                <option value="Received">Received</option>
+                                <option value="Outgoing">Outgoing</option>
+                                <option value="Internal">Internal</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Subject</label>
-                                <input type="text" name="subject" placeholder="" id="subject" class="form-control">
+
+                            <div class="form-group" >
+                                <label>Document Type*</label>
+                                <select class="form-control" name="document_type" placeholder="" id="document_type" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Document Type --</option>
+                                <option value="Memo">Memo</option>
+                                <option value="News Prints">News Prints</option>
+                                <option value="Invitations">Invitations</option>
+                                <option value="Magazines">Magazines</option>
+                                <option value="Forms">Forms</option>
+                                </select>
                             </div>
-                                <input type="hidden" id="document_id" name="document_id">
-                            <div class="form-group">
-                            <label>Document Type</label>
-                                <input type="text" name="document_type" placeholder="" id="document_type" class="form-control">
+
+                            <div class="form-group" >
+                                <label>Office Name*</label>
+                                <select class="form-control" name="office_name" placeholder="" id="office_name" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Office Name --</option>
+                                <option value="CSC">CSC - Civil Service Commission</option>
+                                <option value="BOC">BOC - Beareau of Customs</option>
+                                <option value="COA">COA - Commission on Audit</option>
+                                <option value="DOF">DOF - Department Of Finance</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Office Name</label>
-                                <input type="text" name="office_name" placeholder="" id="office_name" class="form-control">
+                            
+                            <div class="form-group" >
+                                <label>Addressee*</label>
+                                <select class="form-control" name="addressee" placeholder="" id="addressee" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Addressee--</option>
+                                <option value="Ferdinand Gacis">Ferdinand Gacis</option>
+                                <option value="Maria Loren Ignacio">Maria Loren Ignacio</option>
+                                <option value="Marlon Aguilar">Marlon Aguilar</option>
+                                <option value="Jonar Fabula">Jonar Fabula</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label>Addressee</label>
-                                <input type="text" name="addressee" placeholder="" id="addressee" class="form-control">
+
+                            <div class="form-group" >
+                                <label>Mode of Delivery</label>
+                                <select class="form-control" name="mode_of_delivery" placeholder="" id="mode_of_delivery" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Mode of Delivery--</option>
+                                <option value="Courier">Courier</option>
+                                <option value="Email">Email</option>
+                                <option value="Messenger">Messenger</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Snail Mail">Snail Mail</option>
+                                </select>
                             </div>
+                            <input type="hidden" id="document_id" name="document_id">
                             <div class="form-group">
                             <label>Upload</label><br>
                                 <input type="text" name="document_file" placeholder="" id="document_file" class="form-control">
@@ -271,16 +441,24 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label>Subject*</label>
+                                    <input type="text" name="subject" placeholder="" id="subject" class="form-control" required>
+                                </div>
+
+                            <div class="form-group">
                             <label>Sender's Name</label>
                                 <input type="text" name="sender_name" placeholder="" id="sender_name" class="form-control">
                             </div>
-                            <div class="form-group">
-                            <label>Sender's Profile</label>
-                                <input type="text" name="sender_profile" placeholder="" id="sender_profile" class="form-control">
-                            </div>
-                            <div class="form-group">
-                            <label>Mode of Delivery</label>
-                                <input type="text" name="mode_of_delivery" placeholder="" id="mode_of_delivery" class="form-control">
+
+                            <div class="form-group" >
+                                <label>Sender's Profile</label>
+                                <select class="form-control" name="sender_profile" placeholder="" id="sender_profile" class="form-control" required>
+                                <option selected="true" disabled="disabled">-- Select Sender's Profile--</option>
+                                <option value="NGA">NGA - National Government Agencies</option>
+                                <option value="LGU">LGU - Local Government Unit</option>
+                                <option value="SUC">SUC - Schools and Universities Commision</option>
+                                <option value="Private">Private</option>
+                                </select>
                             </div>
                             <div class="form-group">
                             <label>Date received:</label>
@@ -399,10 +577,6 @@
                             <label>Classification</label>
                                 <input type="text" name="classification" placeholder="" id="classification" class="form-control" readonly>
                             </div>
-                            <div class="form-group">
-                            <label>Subject</label>
-                                <input type="text" name="subject" placeholder="" id="subject" class="form-control" readonly>
-                            </div>
                                 <input type="hidden" id="document_id" name="document_id">
                             <div class="form-group">
                             <label>Document Type</label>
@@ -417,11 +591,19 @@
                                 <input type="text" name="addressee" placeholder="" id="addressee" class="form-control" readonly>
                             </div>
                             <div class="form-group">
+                            <label>Mode of Delivery</label>
+                                 <input type="text" name="mode_of_delivery" placeholder="" id="mode_of_delivery" class="form-control" readonly>
+                                </div>
+                            <div class="form-group">
                             <label>Upload</label><br>
                                 <input type="text" name="document_file" placeholder="" id="document_file" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" name="subject" placeholder="" id="subject" class="form-control" readonly>
+                                </div>
                             <div class="form-group">
                             <label>Sender's Name</label>
                                 <input type="text" name="sender_name" placeholder="" id="sender_name" class="form-control" readonly>
@@ -430,10 +612,7 @@
                             <label>Sender's Profile</label>
                                 <input type="text" name="sender_profile" placeholder="" id="sender_profile" class="form-control" readonly>
                             </div>
-                            <div class="form-group">
-                            <label>Mode of Delivery</label>
-                                <input type="text" name="mode_of_delivery" placeholder="" id="mode_of_delivery" class="form-control" readonly>
-                            </div>
+                            
                             <div class="form-group">
                             <label>Date received:</label>
                             <div class="input-group">

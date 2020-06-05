@@ -14,7 +14,7 @@ class DocumentController extends Controller
      */
     public function index(Request $request)
     {
-        $document ['documents']=Document::latest()->paginate(5);
+        $document ['documents']=Document::latest()->paginate(10);
 
         return view('document.index',$document);
     }
